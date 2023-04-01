@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">IP Калькулятор</string>
+    <string name="addr">Address: </string>
+    <string name="bitmask">Bitmask: </string>
+    <string name="netmask">Netmask: </string>
+    <string name="wildcard">Wildcard: </string>
+    <string name="broadcast">Broadcast: </string>
+    <string name="firsthost">First: </string>
+    <string name="lasthost">Last: </string>
+    <string name="network">Network: </string>
+    <string name="hosts">Hosts: </string>
+    <string name="subnets">Subnets: </string>
+    <string name="IPver">IPv4</string>
+    <string name="ping">Ping IP</string>
+    <string name="info">Информация по IP</string>
+    <string name="mask">Mask</string>
+    <string name="ping_process">Ping в процессе…</string>
+    <string name="internet_connection_error">Ошибка подключения к сети</string>
+    <string name="ip_input_error">Введи оба айпи</string>
+    <string name="enter_ip">Enter IP</string>
+    <string name="process_ip_error">IP-адрес является сетевым или широковещательным адресом или находится за пределами сети</string>
+
+</resources>
