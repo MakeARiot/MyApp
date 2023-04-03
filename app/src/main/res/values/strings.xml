@@ -18,6 +18,6 @@
     <string name="internet_connection_error">Ошибка подключения к сети</string>
     <string name="ip_input_error">Введи оба айпи</string>
     <string name="enter_ip">Enter IP</string>
-    <string name="process_ip_error">IP-адрес является сетевым или широковещательным адресом или находится за пределами сети</string>
+    <string name="process_ip_error">IP за пределами сети/является широковещательным/адр. сети</string>
 
 </resources>

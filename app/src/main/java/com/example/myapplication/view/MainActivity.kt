@@ -17,6 +17,7 @@ class MainActivity() : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     var pingRes: Boolean = false
+    lateinit var activIP: String
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,17 +98,18 @@ class MainActivity() : AppCompatActivity() {
 
         // ping 1
         binding.ping1.setOnClickListener {
+            activIP = binding.ip1tv.text.toString()
             binding.restv.text = getString(R.string.ping_process)
             pingRes = false
 
-            if (binding.ip1tv.text.toString() == "1.2.3.4.5"){
+            if (activIP == "1.2.3.4.5"){
                 Toast.makeText(this, "MADE BY kkramarskiy", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
             runBlocking {
                 CoroutineScope(Dispatchers.Main).launch {
-                    val result = network.ping(binding.ip1tv.text.toString(), applicationContext)
+                    val result = network.ping(activIP, applicationContext)
                     if (result == "network error"){
                         Toast.makeText(applicationContext, getString(R.string.internet_connection_error), Toast.LENGTH_LONG).show()
                     } else {
@@ -120,13 +122,14 @@ class MainActivity() : AppCompatActivity() {
 
         // ping 2
         binding.ping2.setOnClickListener {
+            activIP = binding.ip2tv.text.toString()
             binding.restv.text = getString(R.string.ping_process)
             pingRes = false
 
             runBlocking {
                 val scope = CoroutineScope(Dispatchers.Main)
                 scope.launch {
-                    val result = network.ping(binding.ip2tv.text.toString(), applicationContext)
+                    val result = network.ping(activIP, applicationContext)
                     if (result == "network error"){
                         Toast.makeText(applicationContext, getString(R.string.internet_connection_error), Toast.LENGTH_LONG).show()
                     } else {
@@ -141,7 +144,7 @@ class MainActivity() : AppCompatActivity() {
         binding.restv.setOnClickListener {
             if (pingRes){
                 val intent = Intent(applicationContext, MainActivity3::class.java)
-                intent.putExtra("ip", binding.ip1tv.text.toString())
+                intent.putExtra("ip", activIP)
                 intent.putExtra("data", binding.restv.text)
                 startActivity(intent)
             }
