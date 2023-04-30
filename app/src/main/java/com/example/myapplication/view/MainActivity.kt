@@ -115,6 +115,7 @@ class MainActivity() : AppCompatActivity() {
                     } else {
                         binding.restv.text = result
                         pingRes = true
+                        Toast.makeText(this@MainActivity, "Ping выполнен успешно", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -135,6 +136,7 @@ class MainActivity() : AppCompatActivity() {
                     } else {
                         binding.restv.text = result
                         pingRes = true
+                        Toast.makeText(this@MainActivity, "Ping выполнен успешно", Toast.LENGTH_LONG).show()
                     }
                 }
             }
